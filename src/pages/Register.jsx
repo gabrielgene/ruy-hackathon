@@ -5,17 +5,6 @@ import { withStyles } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import Avatar from '@material-ui/core/Avatar';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import Divider from '@material-ui/core/Divider';
-import Checkbox from '@material-ui/core/Checkbox';
-import Paper from '@material-ui/core/Paper';
-import MenuItem from '@material-ui/core/MenuItem';
 
 const styles = theme => ({
   root: {
@@ -97,7 +86,7 @@ class Register extends React.Component {
 
   renderStep() {
     // const { classes, theme } = this.props;
-    const { activeStep } = this.state;
+    // const { activeStep } = this.state;
 
 
     if (this.state.activeStep === 0) {
