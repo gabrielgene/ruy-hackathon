@@ -12,7 +12,7 @@ const styles = {
   root: {
     flexGrow: 1,
   },
-  toolbar:{
+  toolbar: {
   },
   grow: {
     flexGrow: 1,
@@ -45,13 +45,17 @@ class Layout extends React.Component {
     const { classes, menu, back, children, title, bottomBar } = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position="fixed">
+        <AppBar
+          position="fixed"
+          color="default"
+          style={{ backgroundColor: "#fff"}}
+        >
           <Toolbar style={styles.toolbar}>
             {
               menu &&
               <IconButton
                 className={classes.menuButton}
-                color="inherit"
+                color="primary"
                 aria-label="Menu"
                 onClick={this.toggleDrawer}
               >
@@ -60,11 +64,11 @@ class Layout extends React.Component {
             }
             {
               back &&
-              <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+              <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
                 <MenuIcon />
               </IconButton>
             }
-            <Typography variant="title" color="inherit" className={classes.grow}>
+            <Typography variant="title" color="primary" className={classes.grow}>
               {title}
             </Typography>
           </Toolbar>

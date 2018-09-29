@@ -11,8 +11,6 @@ import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
     width: '100%',
   },
   nav: {
@@ -75,21 +73,10 @@ const styles = theme => ({
   }
 });
 
-// const components = {
-//   Control,
-//   Menu,
-//   MultiValue,
-//   NoOptionsMessage,
-//   Option,
-//   Placeholder,
-//   SingleValue,
-//   ValueContainer,
-// };
-
 const Topbar = (props) => (
-  <AppBar position="static">
+  <AppBar position="static" color="default" style={{ backgroundColor: "#fff"}}>
     <Toolbar>
-      <Typography variant="title" color="inherit" className={props.classes.grow}>
+      <Typography variant="title" color="primary" className={props.classes.grow}>
         {props.title}
       </Typography>
     </Toolbar>
@@ -122,7 +109,7 @@ class Register extends React.Component {
   };
 
   handleSubmit = () => {
-    this.props.history.push('/cultura');
+    this.props.history.push('/progresso-cultura');
   }
 
   handleChange = name => event => {
