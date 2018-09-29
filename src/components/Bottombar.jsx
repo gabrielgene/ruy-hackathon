@@ -12,6 +12,7 @@ const styles = {
     backgroundColor: 'white',
     position: 'fixed',
     bottom: 0,
+    border: 'solid 1px #f2f2f2'
   },
 };
 
