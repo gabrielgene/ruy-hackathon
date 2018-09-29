@@ -26,13 +26,12 @@ const styles = {
 class CardFruit extends Component {
   render() {
     const { link, onClick, image, classes } = this.props;
-    console.log(styles.card)
     return (
       <div>
         <Card>
           <Link style={{ textDecoration: 'none' }} to={link} onClick={onClick}>
             <CardActionArea>
-              <CardContent style={styles.card} className="card">
+              <CardContent className={classes.card}>
                 <img style={{ width: '100%', marginBottom: -4, }} src={image} alt="product" />
               </CardContent>
             </CardActionArea>
