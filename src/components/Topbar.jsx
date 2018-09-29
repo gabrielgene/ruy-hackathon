@@ -14,6 +14,9 @@ const styles = {
   grow: {
     flexGrow: 1,
   },
+  textCenter: {
+    textAlign: 'center',
+  },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
