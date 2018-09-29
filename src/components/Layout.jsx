@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
 import Bottombar from './Bottombar';
+import DrawerMenu from './DrawerMenu';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -27,6 +28,9 @@ const styles = {
   childrenWrapper: {
     marginBottom: 60,
     marginTop: 56,
+  },
+  drawer: {
+    width: 250,
   }
 };
 
@@ -70,7 +74,7 @@ class Layout extends React.Component {
           </Toolbar>
         </AppBar>
         <Drawer open={this.state.open} onClose={this.toggleDrawer}>
-          <h1>Menu</h1>
+          <DrawerMenu />
         </Drawer>
         <div style={styles.childrenWrapper}>
           {children}
