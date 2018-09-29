@@ -10,6 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom'
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 const styles = theme => ({
   root: {
@@ -19,30 +20,36 @@ const styles = theme => ({
   card: {
     width: '100%',
   },
+  progress:{
+    background: 'red',
+    marginVertical: 18,
+  },
 });
 
 function InsetList(props) {
   const { classes } = props;
-  console.log(props)
   const hardCodedList = [
     {
       name: "Tomate",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      progress: 35,
     },
     {
       name: "Cenoura",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      progress: 80,
     },
     {
       name: "Alface",
-      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+      text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+      progress: 5,
     },
   ];
   return (
     <div style={styles.root} className={classes.root}>
       <List component="nav">
         {hardCodedList.map(item => (
-          <ListItem button>
+          <ListItem key={item.name} button>
             <Card className={classes.card}>
               <Link style={{ textDecoration: 'none' }} to="/">
                 <CardActionArea>
@@ -53,16 +60,11 @@ function InsetList(props) {
                     <Typography component="p">
                       {item.text}
                     </Typography>
+                    <div style={{marginTop: 16}}>
+                      <LinearProgress variant="determinate" value={item.progress} />
+                    </div>
                   </CardContent>
                 </CardActionArea>
-                <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Learn More
-                  </Button>
-                </CardActions>
               </Link>
             </Card>
             </ListItem>
