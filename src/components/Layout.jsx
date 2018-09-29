@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Drawer from '@material-ui/core/Drawer';
+import Bottombar from './Bottombar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -10,6 +11,8 @@ import MenuIcon from '@material-ui/icons/Menu';
 const styles = {
   root: {
     flexGrow: 1,
+  },
+  toolbar:{
   },
   grow: {
     flexGrow: 1,
@@ -21,19 +24,15 @@ const styles = {
     marginLeft: -12,
     marginRight: 20,
   },
+  childrenWrapper: {
+    marginBottom: 60,
+    marginTop: 56,
+  }
 };
 
-class Topbar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      open: false,
-      title: '',
-    }
-  }
-
-  changeTitle = (title) => {
-    this.setState({ title });
+class Layout extends React.Component {
+  state = {
+    open: false,
   }
 
   toggleDrawer = () => {
@@ -43,11 +42,11 @@ class Topbar extends React.Component {
   };
 
   render() {
-    const { classes, menu, back, children, title } = this.props;
+    const { classes, menu, back, children, title, bottomBar } = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position="static" color="inherit">
-          <Toolbar>
+        <AppBar position="fixed">
+          <Toolbar style={styles.toolbar}>
             {
               menu &&
               <IconButton
@@ -73,7 +72,10 @@ class Topbar extends React.Component {
         <Drawer open={this.state.open} onClose={this.toggleDrawer}>
           <h1>Menu</h1>
         </Drawer>
-        {children}
+        <div style={styles.childrenWrapper}>
+          {children}
+        </div>
+        {bottomBar && <Bottombar />}
       </div>
     );
   }
@@ -81,4 +83,4 @@ class Topbar extends React.Component {
 
 
 
-export default withStyles(styles)(Topbar);
+export default withStyles(styles)(Layout);
