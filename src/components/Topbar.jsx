@@ -24,8 +24,16 @@ const styles = {
 };
 
 class Topbar extends React.Component {
-  state = {
-    open: false,
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false,
+      title: '',
+    }
+  }
+
+  changeTitle = (title) => {
+    this.setState({ title });
   }
 
   toggleDrawer = () => {
@@ -38,7 +46,7 @@ class Topbar extends React.Component {
     const { classes, menu, back, children, title } = this.props;
     return (
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar position="static" color="inherit">
           <Toolbar>
             {
               menu &&
