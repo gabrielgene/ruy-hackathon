@@ -46,10 +46,6 @@ class Layout extends React.Component {
     });
   };
 
-  onExit = () => {
-    this.props.history.push('/');
-  }
-
   render() {
     const { classes, menu, back, children, title, bottomBar, tabBar } = this.props;
     return (
@@ -90,7 +86,7 @@ class Layout extends React.Component {
           {tabBar ? tabBar : null}
         </AppBar>
         <Drawer open={this.state.open} onClose={this.toggleDrawer}>
-          <DrawerMenu onExit={this.onExit}/>
+          <DrawerMenu />
         </Drawer>
         <div style={styles.childrenWrapper}>
           {children}
