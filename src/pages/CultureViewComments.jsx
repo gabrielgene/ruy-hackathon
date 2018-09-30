@@ -26,7 +26,7 @@ class CultureView extends React.Component {
   render() {
     return (
       <div>
-        <img src="https://i.imgur.com/lUEwPw1.png" alt="comentarios" style={{ width: 375 }} />
+        <img src="https://i.imgur.com/lUEwPw1.png" alt="comentarios" style={{ width: 375, marginTop: 14, }} />
       </div>
     );
   }
