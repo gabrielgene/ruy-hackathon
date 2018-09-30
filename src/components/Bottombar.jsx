@@ -4,7 +4,6 @@ import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
 import HomeIcon from '@material-ui/icons/HomeOutlined';
 import FlowerIcon from '@material-ui/icons/LocalFloristOutlined';
-import ShoppingIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import { withRouter } from "react-router-dom";
 
 const styles = {
@@ -31,9 +30,6 @@ class BottomBar extends React.Component {
         this.props.history.push('/cultura');
         break;
       case '1':
-        this.props.history.push('/cultura');
-        break;
-      case '2':
         this.props.history.push('/loja');
         break;
       default:
@@ -54,7 +50,6 @@ class BottomBar extends React.Component {
       >
         <BottomNavigationAction label="Principal" icon={<HomeIcon />} />
         <BottomNavigationAction label="Cultura" icon={<FlowerIcon />} />
-        <BottomNavigationAction label="Loja" icon={<ShoppingIcon />} />
       </BottomNavigation>
     );
   }
