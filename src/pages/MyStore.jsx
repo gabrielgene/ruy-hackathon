@@ -39,18 +39,21 @@ const styles = theme => ({
 class MyStore extends Component {
   state = {
     loading: true,
+    show: true,
   }
 
   componentDidMount() {
+    if (localStorage.getItem('dontShowAgain') === 'neverShow') this.setState({ show: false });
     setTimeout(() => {
       this.setState({ loading: false });
+      localStorage.setItem("dontShowAgain", "neverShow");
     }, 2000);
   }
 
   render() {
-    const { loading } = this.state;
+    const { loading, show } = this.state;
     const { classes } = this.props;
-    if (loading) {
+    if (loading && show) {
       return (
         <div>
           <div className={classes.wrapper} >
