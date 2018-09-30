@@ -13,18 +13,28 @@ import CardFruit from '../components/Card';
 
 const hardCodedObj = {
   cenoura: {
-    link: '/cultura/cenoura',
     image: 'https://i.imgur.com/KBSUF5G.png',
   },
   cebolaroxa: {
-    link: '/cultura/cebola-roxa',
     image: 'https://i.imgur.com/uKyux5S.png',
   },
   banana: {
-    link: '/cultura/banana',
     image: 'https://i.imgur.com/yCgdnp6.png',
   },
 };
+
+const hardList = [
+  {
+    image: 'https://i.imgur.com/KBSUF5G.png',
+  },
+  {
+    image: 'https://i.imgur.com/uKyux5S.png',
+  },
+  {
+    image: 'https://i.imgur.com/yCgdnp6.png',
+  },
+
+];
 
 const styles = theme => ({
   textField: {
@@ -43,6 +53,7 @@ const styles = theme => ({
     flexGrow: 1,
   },
   form: {
+    marginTop: 56,
     padding: theme.spacing.unit * 2,
   },
   formWrapper: {
@@ -95,7 +106,7 @@ const styles = theme => ({
 });
 
 const Topbar = (props) => (
-  <AppBar position="static" color="default" style={{ backgroundColor: "#fff" }}>
+  <AppBar position="fixed" color="default" style={{ backgroundColor: "#fff" }}>
     <Toolbar>
       <Typography variant="title" color="primary" className={props.classes.grow}>
         {props.title}
@@ -131,7 +142,7 @@ class Register extends React.Component {
   };
 
   handleSubmit = () => {
-    this.props.history.push('/progresso-cultura');
+    this.props.history.push('/cultura');
   };
 
   onAdd = () => {
@@ -169,7 +180,6 @@ class Register extends React.Component {
       city,
       area,
       culture,
-      amount,
       cultureList,
     } = this.state;
 
@@ -260,7 +270,7 @@ class Register extends React.Component {
               Adicionar
             </Button>
             <List component="nav">
-              {cultureList.map(({ image, link }) => (
+              {cultureList.map(({ image }) => (
                 <ListItem key={image} button>
                   <CardFruit
                     link={''}
@@ -276,14 +286,32 @@ class Register extends React.Component {
       return (
         <div>
           <Topbar title="Informações da sua região" classes={classes} />
-          <img alt="map" src="https://i.imgur.com/zw9DOK2.jpg" style={{ width: '100%' }} />
+          <img
+            alt="map"
+            src="https://i.imgur.com/zw9DOK2.jpg"
+            style={{ width: '100%', marginTop: 56 }}
+          />
+          <List component="nav" style={{ marginBottom: 56 }}>
+            {hardList.map(({ image }) => (
+              <ListItem key={image} button>
+                <CardFruit
+                  link={''}
+                  image={image}
+                />
+              </ListItem>
+            ))}
+          </List>
         </div>
       )
     } else if (activeStep === 3) {
       return (
         <div>
           <Topbar title="Agricultura sintropica" classes={classes} />
-          <img alt="map" src="https://i.imgur.com/CdHtX7L.png" style={{ width: '100%' }} />
+          <img
+            alt="map"
+            src="https://i.imgur.com/CdHtX7L.png"
+            style={{ width: '100%', height: 646 }}
+          />
         </div>
       )
     }

@@ -1,12 +1,18 @@
 import React, { Component } from 'react'
 import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
-import InboxIcon from '@material-ui/icons/Inbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
+import ExitIcon from '@material-ui/icons/PowerSettingsNew';
+import FaceIcon from '@material-ui/icons/Face';
+import CopyIcon from '@material-ui/icons/Copyright';
+import InfoIcon from '@material-ui/icons/Info';
+import AddIcon from '@material-ui/icons/Add';
 
 const styles = {
   drawer: {
@@ -19,27 +25,46 @@ class DrawerMenu extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.drawer}>
+        <AppBar position="static">
+          <Toolbar>
+            <Typography variant="title" color="inherit" style={{ color: "#fff" }}>
+              Semear
+            </Typography>
+          </Toolbar>
+        </AppBar>
         <List component="nav">
           <ListItem button>
             <ListItemIcon>
-              <InboxIcon />
+              <FaceIcon />
             </ListItemIcon>
-            <ListItemText primary="Inbox" />
+            <ListItemText primary="Perfil" />
           </ListItem>
           <ListItem button>
             <ListItemIcon>
-              <DraftsIcon />
+              <AddIcon />
             </ListItemIcon>
-            <ListItemText primary="Drafts" />
+            <ListItemText primary="Adicionar Cultura" />
+          </ListItem>
+          <ListItem button>
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="Saiba mais" />
           </ListItem>
         </List>
         <Divider />
         <List component="nav">
           <ListItem button>
-            <ListItemText primary="Trash" />
+            <ListItemIcon>
+              <CopyIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sobre" />
           </ListItem>
-          <ListItem button component="a" href="#simple-list">
-            <ListItemText primary="Spam" />
+          <ListItem button onClick={this.props.onExit}>
+            <ListItemIcon>
+              <ExitIcon />
+            </ListItemIcon>
+            <ListItemText primary="Sair" />
           </ListItem>
         </List>
       </div>

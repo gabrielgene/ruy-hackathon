@@ -6,7 +6,6 @@ import HomeIcon from '@material-ui/icons/HomeOutlined';
 import FlowerIcon from '@material-ui/icons/LocalFloristOutlined';
 import ShoppingIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import { withRouter } from "react-router-dom";
-import { browserHistory } from 'react-router';
 
 const styles = {
   root: {
@@ -18,10 +17,10 @@ const styles = {
   },
 };
 
-// #hackathon
+// #notProudAboutThat
 class BottomBar extends React.Component {
   state = {
-    value: parseInt(localStorage.getItem('value')),
+    value: parseInt(localStorage.getItem('value'), 10),
   };
 
   handleChange = (event, value) => {
@@ -35,7 +34,7 @@ class BottomBar extends React.Component {
         this.props.history.push('/cultura');
         break;
       case '2':
-        this.props.history.push('/mercado');
+        this.props.history.push('/loja');
         break;
       default:
         break;
@@ -55,7 +54,7 @@ class BottomBar extends React.Component {
       >
         <BottomNavigationAction label="Principal" icon={<HomeIcon />} />
         <BottomNavigationAction label="Cultura" icon={<FlowerIcon />} />
-        <BottomNavigationAction label="Mercado" icon={<ShoppingIcon />} />
+        <BottomNavigationAction label="Loja" icon={<ShoppingIcon />} />
       </BottomNavigation>
     );
   }

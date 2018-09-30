@@ -5,9 +5,9 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import { green, pink } from '@material-ui/core/colors';
 import Register from './pages/Register';
-import Market from './pages/Market';
 import Login from './pages/Login';
 import Progress from './pages/Progress';
+import Store from './pages/Store';
 import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
@@ -19,8 +19,8 @@ const theme = createMuiTheme({
   },
 });
 
-const ProgressPage = () => (
-  <Layout title="Minhas Culturas" bottomBar menu>
+const ProgressPage = (props) => (
+  <Layout title="Minhas Culturas" bottomBar menu {...props}>
     <Progress />
   </Layout>
 );
@@ -33,22 +33,21 @@ const CultureViewPage = () => (
 
 const StorePage = () => (
   <Layout title="Loja" bottomBar menu>
-    <Market />
+    <Store />
   </Layout>
 );
 
 const App = () => (
   <MuiThemeProvider theme={theme}>
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/cadastro" component={Register} />
-      <Route exact path="/cultura" component={ProgressPage} />
-      <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
-      <Route exact path="/agricultores" component={Register} />
-      <Route exact path="/loja" component={Store} />
-    </Switch>
-  </Router>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/cadastro" component={Register} />
+        <Route exact path="/cultura" component={ProgressPage} />
+        <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
+        <Route exact path="/loja" component={StorePage} />
+      </Switch>
+    </Router>
   </MuiThemeProvider>
 );
 
