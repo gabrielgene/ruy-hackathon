@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import Progress from './pages/Progress';
 import Store from './pages/Store';
 import CultureView from './pages/CultureView';
+import MyStore from './pages/MyStore';
 import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
@@ -32,9 +33,9 @@ const StorePage = (props) => (
   </Layout>
 );
 
-const MyStore = ({ history }) => (
+const MyStorePage = ({ history }) => (
   <Layout title="Minha loja" back={() => history.goBack()}>
-    <h1>Minha loja</h1>
+    <MyStore />
   </Layout>
 );
 
@@ -47,7 +48,7 @@ const App = () => (
         <Route exact path="/cultura" component={ProgressPage} />
         <Route exact path="/cultura/:cultureName" component={CultureView} />
         <Route exact path="/loja" component={StorePage} />
-        <Route exact path="/minha-loja" component={MyStore} />
+        <Route exact path="/minha-loja" component={MyStorePage} />
       </Switch>
     </Router>
   </MuiThemeProvider>
