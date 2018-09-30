@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import Progress from './pages/Progress';
 import Store from './pages/Store';
+import CultureView from './pages/CultureView';
 import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
@@ -25,12 +26,6 @@ const ProgressPage = (props) => (
   </Layout>
 );
 
-const CultureViewPage = () => (
-  <Layout title="Cultura" back>
-    <h1>Ravi</h1>
-  </Layout>
-);
-
 const StorePage = () => (
   <Layout title="Loja" bottomBar menu>
     <Store />
@@ -44,7 +39,7 @@ const App = () => (
         <Route exact path="/" component={Login} />
         <Route exact path="/cadastro" component={Register} />
         <Route exact path="/cultura" component={ProgressPage} />
-        <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
+        <Route exact path="/cultura/:cultureName" component={CultureView} />
         <Route exact path="/loja" component={StorePage} />
       </Switch>
     </Router>

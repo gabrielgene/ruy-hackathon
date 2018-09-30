@@ -8,6 +8,7 @@ import DrawerMenu from './DrawerMenu';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import ArrowBack from '@material-ui/icons/ArrowBack';
 
 const styles = {
   root: {
@@ -50,7 +51,7 @@ class Layout extends React.Component {
   }
 
   render() {
-    const { classes, menu, back, children, title, bottomBar } = this.props;
+    const { classes, menu, back, children, title, bottomBar, tabBar } = this.props;
     return (
       <div className={classes.root}>
         <AppBar
@@ -70,16 +71,23 @@ class Layout extends React.Component {
                 <MenuIcon />
               </IconButton>
             }
-            {
-              back &&
+            {/* {
+              !back &&
               <IconButton className={classes.menuButton} color="primary" aria-label="Menu">
                 <MenuIcon />
+              </IconButton>
+            } */}
+            {
+              back &&
+              <IconButton onClick={this.props.back} className={classes.menuButton} color="primary" aria-label="Menu">
+                <ArrowBack />
               </IconButton>
             }
             <Typography variant="title" color="primary" className={classes.grow}>
               {title}
             </Typography>
           </Toolbar>
+          {tabBar ? tabBar : null}
         </AppBar>
         <Drawer open={this.state.open} onClose={this.toggleDrawer}>
           <DrawerMenu onExit={this.onExit}/>
