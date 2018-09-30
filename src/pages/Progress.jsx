@@ -15,16 +15,16 @@ const InsetList = props => {
   const { classes } = props;
   const hardCodedList = [
     {
+      link: "/cultura/banana",
+      image: 'https://i.imgur.com/FoNmmpc.png',
+    },
+    {
       link: "/cultura/cenoura",
       image: 'https://i.imgur.com/TC62vyy.png',
     },
     {
       link: "/cultura/cebola-roxa",
       image: 'https://i.imgur.com/JFPyLJM.png',
-    },
-    {
-      link: "/cultura/banana",
-      image: 'https://i.imgur.com/FoNmmpc.png',
     },
   ];
   return (
