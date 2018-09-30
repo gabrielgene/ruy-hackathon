@@ -7,11 +7,32 @@ import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
+import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List';
+import CardFruit from '../components/Card';
 
+const hardCodedObj = {
+  cenoura: {
+    link: '/cultura/cenoura',
+    image: 'https://i.imgur.com/KBSUF5G.png',
+  },
+  cebolaroxa: {
+    link: '/cultura/cebola-roxa',
+    image: 'https://i.imgur.com/uKyux5S.png',
+  },
+  banana: {
+    link: '/cultura/banana',
+    image: 'https://i.imgur.com/yCgdnp6.png',
+  },
+};
 
 const styles = theme => ({
   textField: {
     width: '100%',
+  },
+  button: {
+    marginTop: theme.spacing.unit,
+    marginBottom: theme.spacing.unit,
   },
   nav: {
     width: '100%',
@@ -74,7 +95,7 @@ const styles = theme => ({
 });
 
 const Topbar = (props) => (
-  <AppBar position="static" color="default" style={{ backgroundColor: "#fff"}}>
+  <AppBar position="static" color="default" style={{ backgroundColor: "#fff" }}>
     <Toolbar>
       <Typography variant="title" color="primary" className={props.classes.grow}>
         {props.title}
@@ -94,6 +115,7 @@ class Register extends React.Component {
     area: '',
     culture: '',
     amount: '',
+    cultureList: [],
   };
 
   handleNext = () => {
@@ -110,7 +132,25 @@ class Register extends React.Component {
 
   handleSubmit = () => {
     this.props.history.push('/progresso-cultura');
-  }
+  };
+
+  onAdd = () => {
+    const { cultureList, culture } = this.state;
+    let cultureItem;
+    if (culture === 'Banana') {
+      cultureItem = hardCodedObj.banana;
+    } else if (culture === 'Cebola roxa') {
+      cultureItem = hardCodedObj.cebolaroxa;
+    } else if (culture === 'Cenoura') {
+      cultureItem = hardCodedObj.cenoura;
+    }
+
+    this.setState({
+      cultureList: [...cultureList, cultureItem],
+      culture: '',
+      amount: '',
+    });
+  };
 
   handleChange = name => event => {
     this.setState({
@@ -130,6 +170,7 @@ class Register extends React.Component {
       area,
       culture,
       amount,
+      cultureList,
     } = this.state;
 
 
@@ -218,6 +259,25 @@ class Register extends React.Component {
               margin="normal"
               value={amount}
             />
+            <Button
+              variant="outlined"
+              color="primary"
+              fullWidth
+              className={classes.button}
+              onClick={this.onAdd}
+            >
+              Adicionar
+            </Button>
+            <List component="nav">
+              {cultureList.map(({ image, link }) => (
+                <ListItem key={image} button>
+                  <CardFruit
+                    link={''}
+                    image={image}
+                  />
+                </ListItem>
+              ))}
+            </List>
           </div>
         </div>
       )
@@ -225,12 +285,14 @@ class Register extends React.Component {
       return (
         <div>
           <Topbar title="Informações da sua região" classes={classes} />
+          <img alt="map" src="https://i.imgur.com/zw9DOK2.jpg" style={{ width: '100%' }} />
         </div>
       )
     } else if (activeStep === 3) {
       return (
         <div>
           <Topbar title="Agricultura sintropica" classes={classes} />
+          <img alt="map" src="https://i.imgur.com/CdHtX7L.png" style={{ width: '100%' }} />
         </div>
       )
     }
