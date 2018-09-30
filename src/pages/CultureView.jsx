@@ -77,7 +77,7 @@ class CultureView extends React.Component {
         tabBar={<CultureViewTabs value={value} handleChange={this.handleChange} />}
       >
         <div className={classes.root}>
-          <img src="https://i.imgur.com/Z7cn8Ew.png" alt="bli" style={{ width: '100%' }} />
+          <img src="https://i.imgur.com/Z7cn8Ew.png" alt="bli" style={{ width: '100%', minHeight: 150, }} />
           {value === "one" &&
             <List>
             {[0, 1, 2, 3].map(value => (
