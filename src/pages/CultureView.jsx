@@ -14,8 +14,7 @@ import CultureViewGuide from './CultureViewGuide';
 
 const styles = theme => ({
   root: {
-    // topbar + tabbar
-    marginTop: 128,
+    marginTop: 105,
   },
   listItemDescription: {
     display: 'flex',
@@ -40,11 +39,11 @@ const styles = theme => ({
 
 const matchFruit = fruit => {
   if (fruit.match(/cebola/g)) {
-    return 'https://i.imgur.com/JFPyLJM.png';
-  } else if(fruit === 'banana'){
+    return 'https://i.imgur.com/WaiovWP.png';
+  } else if (fruit === 'banana') {
     return 'https://i.imgur.com/Z7cn8Ew.png';
-  } else if(fruit === 'cenoura'){
-    return 'https://i.imgur.com/TC62vyy.png';
+  } else if (fruit === 'cenoura') {
+    return 'https://i.imgur.com/gM6puhi.png';
   }
 }
 
@@ -86,13 +85,21 @@ class CultureView extends React.Component {
         tabBar={<CultureViewTabs value={value} handleChange={this.handleChange} />}
       >
         <div className={classes.root}>
-          <img src={fruitImage} alt="bli" style={{ width: '100%',minHeight: 150, }} />
+          <img src={fruitImage} alt="bli" style={{ width: '100%', minHeight: 139 }} />
           {value === "one" &&
           <CultureViewGuide />
           }
           {value === "two" &&
             <div>
               <Animation />
+              <div style={{textAlign: 'center', marginTop: 125,}}>
+                <h3>Compatíveis</h3>
+                <img style={{height: 80}} src="https://i.imgur.com/VxChHua.png" />
+              </div>
+              <div style={{textAlign: 'center'}}>
+                <h3>Não Compatíveis</h3>
+                <img style={{height: 80}} src="https://i.imgur.com/atGzOfc.png" />
+              </div>
             </div>
           }
           {value === "three" &&
