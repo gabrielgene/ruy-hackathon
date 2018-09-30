@@ -12,6 +12,7 @@ const styles = theme => ({
     justifyContent: 'center',
     flexWrap: 'wrap',
     padding: theme.spacing.unit * 3,
+    backgroudColor: 'green',
   },
   title: {
     marginTop: theme.spacing.unit * 8,
@@ -59,6 +60,7 @@ class Login extends Component {
         >
           Semear
         </Typography>
+        {/* <img style={{maxWidth: '100%', maxHeight: 100, marginBottom:88, marginTop: 80}} src="https://i.imgur.com/JXOvsZy.png" alt="logo" /> */}
         <TextField
           id="user"
           label="Usuário"

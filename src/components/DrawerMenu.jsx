@@ -13,6 +13,7 @@ import FaceIcon from '@material-ui/icons/Face';
 import CopyIcon from '@material-ui/icons/Copyright';
 import InfoIcon from '@material-ui/icons/Info';
 import AddIcon from '@material-ui/icons/Add';
+import { withRouter } from "react-router-dom";
 
 const styles = {
   drawer: {
@@ -72,4 +73,6 @@ class DrawerMenu extends Component {
   }
 }
 
-export default withStyles(styles)(DrawerMenu);
+const DrawerWithRouter = withRouter(DrawerMenu);
+
+export default withStyles(styles)(DrawerWithRouter);
