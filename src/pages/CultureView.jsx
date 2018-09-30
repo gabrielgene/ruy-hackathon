@@ -119,6 +119,14 @@ class CultureView extends React.Component {
           {value === "two" &&
             <div>
               <Animation />
+              <div style={{textAlign: 'center', marginTop: 125,}}>
+                <h3>Compatíveis</h3>
+                <img style={{height: 80}} src="https://i.imgur.com/VxChHua.png" />
+              </div>
+              <div style={{textAlign: 'center'}}>
+                <h3>Não Compatíveis</h3>
+                <img style={{height: 80}} src="https://i.imgur.com/atGzOfc.png" />
+              </div>
             </div>
           }
           {value === "three" &&
