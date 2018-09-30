@@ -6,6 +6,7 @@ import HomeIcon from '@material-ui/icons/HomeOutlined';
 import FlowerIcon from '@material-ui/icons/LocalFloristOutlined';
 import ShoppingIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import { withRouter } from "react-router-dom";
+import { browserHistory } from 'react-router';
 
 const styles = {
   root: {
@@ -17,43 +18,29 @@ const styles = {
   },
 };
 
+// #hackathon
 class BottomBar extends React.Component {
   state = {
-    value: 0,
+    value: parseInt(localStorage.getItem('value')),
   };
 
-  setRouteState = value => {
-    const { pathname } = this.props.location;
-    const newValue = value || pathname;
-    switch (newValue) {
-      case 0:
+  handleChange = (event, value) => {
+    localStorage.setItem('value', value);
+    const gambiarra = localStorage.getItem('value');
+    switch (gambiarra) {
+      case '0':
         this.props.history.push('/cultura');
-        return value;
-      case 1:
-        this.props.history.push('/cadastro');
-        return value;
-      case 1:
-        this.props.history.push('/agricultores');
-        return value;
-      case '/cultura':
-        this.setState({ value: 0 });
         break;
-      case '/cadastro':
-        this.setState({ value: 1 });
+      case '1':
+        this.props.history.push('/cultura');
         break;
-      case '/agricultures':
-        this.setState({ value: 2 });
+      case '2':
+        this.props.history.push('/mercado');
         break;
       default:
-        this.setState({ value: 0 });
         break;
-      }
+    }
     return;
-  }
-
-  handleChange = (event, value) => {
-    this.setState({ value });
-    this.setRouteState(value);
   };
 
   render() {
