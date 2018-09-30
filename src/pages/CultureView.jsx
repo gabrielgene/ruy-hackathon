@@ -1,30 +1,11 @@
 import React from "react";
 
 import { withStyles } from "@material-ui/core/styles";
-import Icon from "@material-ui/core/Icon";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import PhoneIcon from "@material-ui/icons/Phone";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import PersonPinIcon from "@material-ui/icons/PersonPin";
 import Layout from '../components/Layout';
 import CultureViewTabs from '../components/CultureViewTabs';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import CommentIcon from '@material-ui/icons/Comment';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import classNames from 'classnames';
-import Avatar from '@material-ui/core/Avatar';
 import CultureViewComments from './CultureViewComments';
 
 
@@ -96,7 +77,7 @@ class CultureView extends React.Component {
         tabBar={<CultureViewTabs value={value} handleChange={this.handleChange} />}
       >
         <div className={classes.root}>
-          <img src="https://i.imgur.com/Z7cn8Ew.png" style={{ width: '100%' }} />
+          <img src="https://i.imgur.com/Z7cn8Ew.png" alt="bli" style={{ width: '100%' }} />
           {value === "one" &&
             <List>
             {[0, 1, 2, 3].map(value => (
