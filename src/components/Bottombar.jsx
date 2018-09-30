@@ -39,7 +39,7 @@ class BottomBar extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Cultura" icon={<FlowerIcon />} />
+        <BottomNavigationAction label="Culturas" icon={<FlowerIcon />} />
         <BottomNavigationAction label="Loja" icon={<ShopIcon />} />
       </BottomNavigation>
     );

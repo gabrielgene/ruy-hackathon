@@ -9,8 +9,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import ExitIcon from '@material-ui/icons/PowerSettingsNew';
-import FaceIcon from '@material-ui/icons/Face';
-import CopyIcon from '@material-ui/icons/Copyright';
+import StoreIcon from '@material-ui/icons/Store';
 import InfoIcon from '@material-ui/icons/Info';
 import AddIcon from '@material-ui/icons/Add';
 import { withRouter } from "react-router-dom";
@@ -27,6 +26,7 @@ class DrawerMenu extends Component {
   }
 
   onSaibaMais = () => this.props.history.push('/saiba-mais');
+  onAddFruit = () => this.props.history.push('/cadastro-produto');
 
   render() {
     const { classes } = this.props;
@@ -42,11 +42,11 @@ class DrawerMenu extends Component {
         <List component="nav">
           <ListItem button>
             <ListItemIcon>
-              <FaceIcon />
+              <StoreIcon />
             </ListItemIcon>
-            <ListItemText primary="Perfil" />
+            <ListItemText primary="Minha Loja" />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={this.onAddFruit}>
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
@@ -61,12 +61,6 @@ class DrawerMenu extends Component {
         </List>
         <Divider />
         <List component="nav">
-          <ListItem button>
-            <ListItemIcon>
-              <CopyIcon />
-            </ListItemIcon>
-            <ListItemText primary="Sobre" />
-          </ListItem>
           <ListItem button onClick={this.onExit}>
             <ListItemIcon>
               <ExitIcon />
