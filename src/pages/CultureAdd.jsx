@@ -99,13 +99,14 @@ class CultureAdd extends Component {
   onAdd = () => {
     const { cultureList, culture } = this.state;
     let cultureItem;
-    if (culture.match(/banana/g)) {
+    if (culture === 'banana') {
       cultureItem = hardCodedObj.banana;
-    } else if (culture.match(/cebola/g)) {
+    } else if (culture === 'cebola') {
       cultureItem = hardCodedObj.cebolaroxa;
-    } else if (culture.match(/cenoura/g)) {
+    } else if (culture === 'cenoura') {
       cultureItem = hardCodedObj.cenoura;
     }
+    else{ return; }
 
     this.setState({
       cultureList: [...cultureList, cultureItem],
