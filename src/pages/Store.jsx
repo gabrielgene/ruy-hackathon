@@ -27,7 +27,7 @@ const styles = theme => ({
   },
 });
 
-const Store = ({ classes }) => (
+const Store = ({ classes, history }) => (
   <div className={classes.store}>
     <img style={{
       width: 375,
@@ -41,6 +41,7 @@ const Store = ({ classes }) => (
       aria-label="Store"
       className={classes.button}
       style={{ color: "#fff" }}
+      onClick={() => history.push('/minha-loja')}
     >
       <StoreIcon className={classes.extendedIcon} />
       Criar minha loja

@@ -26,12 +26,17 @@ const ProgressPage = (props) => (
   </Layout>
 );
 
-const StorePage = () => (
+const StorePage = (props) => (
   <Layout title="Loja" bottomBar menu>
-    <Store />
+    <Store {...props} />
   </Layout>
 );
 
+const MyStore = ({ history }) => (
+  <Layout title="Minha loja" back={() => history.goBack()}>
+    <h1>Minha loja</h1>
+  </Layout>
+);
 
 const App = () => (
   <MuiThemeProvider theme={theme}>
@@ -42,6 +47,7 @@ const App = () => (
         <Route exact path="/cultura" component={ProgressPage} />
         <Route exact path="/cultura/:cultureName" component={CultureView} />
         <Route exact path="/loja" component={StorePage} />
+        <Route exact path="/minha-loja" component={MyStore} />
       </Switch>
     </Router>
   </MuiThemeProvider>
