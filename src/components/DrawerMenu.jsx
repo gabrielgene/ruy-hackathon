@@ -27,6 +27,7 @@ class DrawerMenu extends Component {
 
   onSaibaMais = () => this.props.history.push('/saiba-mais');
   onAddFruit = () => this.props.history.push('/cadastro-produto');
+  onMinhaLoja = () => this.props.history.push('/minha-loja');
 
   render() {
     const { classes } = this.props;
@@ -40,7 +41,7 @@ class DrawerMenu extends Component {
           </Toolbar>
         </AppBar>
         <List component="nav">
-          <ListItem button>
+          <ListItem button onClick={this.onMinhaLoja}>
             <ListItemIcon>
               <StoreIcon />
             </ListItemIcon>

@@ -3,6 +3,7 @@ import Modal from '@material-ui/core/Modal';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import StoreAnime from '../components/StoreAnime';
 
 const styles = theme => ({
   paper: {
@@ -43,7 +44,7 @@ class MyStore extends Component {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false });
-    }, 3000);
+    }, 2000);
   }
 
   render() {
@@ -63,7 +64,7 @@ class MyStore extends Component {
     } else {
       return (
         <div>
-          <h1>Minha loja</h1>
+          <StoreAnime />
         </div>
       );
     };

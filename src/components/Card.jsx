@@ -16,7 +16,7 @@ const styles = {
     color: 'white',
     padding: 0,
     margin:0,
-    minHeight: 126,
+    minHeight: 114,
   },
   progress:{
     background: 'red',

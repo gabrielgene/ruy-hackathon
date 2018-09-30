@@ -13,27 +13,35 @@ import CardFruit from '../components/Card';
 
 const hardCodedObj = {
   cenoura: {
-    image: 'https://i.imgur.com/KBSUF5G.png',
+    image: 'https://i.imgur.com/8g4aqRu.png',
   },
   cebolaroxa: {
-    image: 'https://i.imgur.com/uKyux5S.png',
+    image: 'https://i.imgur.com/dLXdWrd.png',
   },
   banana: {
-    image: 'https://i.imgur.com/yCgdnp6.png',
+    image: 'https://i.imgur.com/8rYX23y.png',
   },
 };
 
 const hardList = [
   {
-    image: 'https://i.imgur.com/KBSUF5G.png',
+    image: ' https://i.imgur.com/SJMF1Fo.png ',
   },
   {
-    image: 'https://i.imgur.com/uKyux5S.png',
+    image: 'https://i.imgur.com/7JbfriU.png',
   },
   {
-    image: 'https://i.imgur.com/yCgdnp6.png',
+    image: 'https://i.imgur.com/8g4aqRu.png',
   },
-
+  {
+    image: 'https://i.imgur.com/dLXdWrd.png',
+  },
+  {
+    image: 'https://i.imgur.com/8rYX23y.png',
+  },
+  {
+    image: 'https://i.imgur.com/pw6EF2t.png',
+  },
 ];
 
 const styles = theme => ({
@@ -123,9 +131,9 @@ const Topbar = (props) => (
 class Register extends React.Component {
   state = {
     activeStep: 0,
-    name: 'Gabriel Genê',
-    cpf: '075.111.633.00',
-    location: 'Rua número 0',
+    name: '',
+    cpf: '',
+    location: 'R. Desdêmonas, 10-124 - Rio Vermelho',
     state: 'Bahia',
     city: 'Salvador',
     area: '',
@@ -223,21 +231,21 @@ class Register extends React.Component {
             />
             <TextField
               id="outlined-with-placeholder"
-              label="Estado"
-              placeholder="Ex: Bahia"
-              className={classes.textField}
-              onChange={this.handleChange('state')}
-              margin="normal"
-              value={state}
-            />
-            <TextField
-              id="outlined-with-placeholder"
               label="Cidade"
               placeholder="Ex: Salvador"
               className={classes.textField}
               onChange={this.handleChange('city')}
               margin="normal"
               value={city}
+            />
+            <TextField
+              id="outlined-with-placeholder"
+              label="Estado"
+              placeholder="Ex: Bahia"
+              className={classes.textField}
+              onChange={this.handleChange('state')}
+              margin="normal"
+              value={state}
             />
             <TextField
               id="outlined-with-placeholder"
@@ -292,7 +300,7 @@ class Register extends React.Component {
           <Topbar title="Informações da sua região" classes={classes} {...this.props} />
           <img
             alt="map"
-            src="https://i.imgur.com/zw9DOK2.jpg"
+            src="https://i.imgur.com/TN1IK7F.jpg"
             style={{ width: '100%', marginTop: 56, height: 175 }}
           />
           <List component="nav" style={{ marginBottom: 56 }}>
