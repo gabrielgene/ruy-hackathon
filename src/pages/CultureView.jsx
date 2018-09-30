@@ -36,6 +36,16 @@ const styles = theme => ({
   checked: {},
 });
 
+const matchFruit = fruit => {
+  if (fruit.match(/cebola/g)) {
+    return 'https://i.imgur.com/JFPyLJM.png';
+  } else if(fruit === 'banana'){
+    return 'https://i.imgur.com/FoNmmpc.png';
+  } else if(fruit === 'cenoura'){
+    return 'https://i.imgur.com/TC62vyy.png';
+  }
+}
+
 class CultureView extends React.Component {
   state = {
     value: "one",
@@ -43,7 +53,6 @@ class CultureView extends React.Component {
   };
 
   handleChange = (event, value) => {
-    console.log('value')
     this.setState({ value });
   };
 
@@ -62,14 +71,12 @@ class CultureView extends React.Component {
       checked: newChecked,
     });
   };
-
   render() {
     const { classes } = this.props;
     const { value } = this.state;
-    console.log(this.props.location);
     const title =
       this.props.location.pathname.replace('/cultura/', '');
-
+    const fruitImage = matchFruit(title);
     return (
       <Layout
         title={title.charAt(0).toUpperCase() + title.slice(1)}
@@ -77,7 +84,7 @@ class CultureView extends React.Component {
         tabBar={<CultureViewTabs value={value} handleChange={this.handleChange} />}
       >
         <div className={classes.root}>
-          <img src="https://i.imgur.com/Z7cn8Ew.png" alt="bli" style={{ width: '100%', minHeight: 150, }} />
+          <img src={fruitImage} alt="bli" style={{ width: '100%',minHeight: 150, }} />
           {value === "one" &&
             <List>
             {[0, 1, 2, 3].map(value => (
