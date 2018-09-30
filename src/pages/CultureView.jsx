@@ -13,8 +13,7 @@ import Animation from '../components/Anime';
 
 const styles = theme => ({
   root: {
-    // topbar + tabbar
-    marginTop: 128,
+    marginTop: 105,
   },
   listItemDescription: {
     display: 'flex',
@@ -40,9 +39,9 @@ const styles = theme => ({
 const matchFruit = fruit => {
   if (fruit.match(/cebola/g)) {
     return 'https://i.imgur.com/JFPyLJM.png';
-  } else if(fruit === 'banana'){
+  } else if (fruit === 'banana') {
     return 'https://i.imgur.com/Z7cn8Ew.png';
-  } else if(fruit === 'cenoura'){
+  } else if (fruit === 'cenoura') {
     return 'https://i.imgur.com/TC62vyy.png';
   }
 }
@@ -85,7 +84,7 @@ class CultureView extends React.Component {
         tabBar={<CultureViewTabs value={value} handleChange={this.handleChange} />}
       >
         <div className={classes.root}>
-          <img src={fruitImage} alt="bli" style={{ width: '100%',minHeight: 150, }} />
+          <img src={fruitImage} alt="bli" style={{ width: '100%', minHeight: 139 }} />
           {value === "one" &&
             <List>
               {[0, 1, 2, 3].map(value => (
