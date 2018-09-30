@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Modal from '@material-ui/core/Modal';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -39,21 +38,19 @@ const styles = theme => ({
 class MyStore extends Component {
   state = {
     loading: true,
-    show: true,
   }
 
   componentDidMount() {
-    if (localStorage.getItem('dontShowAgain') === 'neverShow') this.setState({ show: false });
     setTimeout(() => {
       this.setState({ loading: false });
-      localStorage.setItem("dontShowAgain", "neverShow");
     }, 2000);
   }
 
   render() {
-    const { loading, show } = this.state;
+    const { loading } = this.state;
     const { classes } = this.props;
-    if (loading && show) {
+    console.log(loading)
+    if (loading) {
       return (
         <div>
           <div className={classes.wrapper} >
