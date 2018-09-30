@@ -93,15 +93,23 @@ class Login extends Component {
           color="primary"
           fullWidth
           onClick={this.onSubmit}
+          style={{ color: "#fff" }}
         >
           Entrar
         </Button>
+        <Typography
+          color="secondary"
+          className={classes.register}
+          variant="body2"
+          onClick={() => this.props.history.push('/cadastro')}
+        >
+          Não possuo uma conta.
+        </Typography>
         <Snackbar
           open={this.state.error}
           autoHideDuration={2000}
           onClose={this.handleClose}
           message={<span id="snackbar-fab-message-id">Usuario ou senha incorreta</span>}
-        // className={classes.snackbar}
         />
       </div>
     )

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { MuiThemeProvider } from '@material-ui/core/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
-import { green, pink } from '@material-ui/core/colors';
+import { green, red } from '@material-ui/core/colors';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Progress from './pages/Progress';
@@ -17,7 +17,7 @@ import './index.css';
 const theme = createMuiTheme({
   palette: {
     primary: green,
-    secondary: pink,
+    secondary: red,
   },
 });
 

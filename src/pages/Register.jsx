@@ -102,7 +102,11 @@ const styles = theme => ({
   selectCourse: {
     marginTop: theme.spacing.unit * 2,
     marginBottom: theme.spacing.unit,
-  }
+  },
+  after: {
+    marginTop: 57,
+    textAlign: 'center',
+  },
 });
 
 const Topbar = (props) => (
@@ -111,6 +115,7 @@ const Topbar = (props) => (
       <Typography variant="title" color="primary" className={props.classes.grow}>
         {props.title}
       </Typography>
+      <Button color="primary" onClick={() => props.history.push('/')}>Entrar</Button>
     </Toolbar>
   </AppBar>
 );
@@ -187,7 +192,7 @@ class Register extends React.Component {
     if (activeStep === 0) {
       return (
         <div>
-          <Topbar title="Cadastro" classes={classes} />
+          <Topbar title="Cadastro" classes={classes} {...this.props} />
           <div className={classes.form}>
             <TextField
               id="outlined-with-placeholder"
@@ -249,7 +254,7 @@ class Register extends React.Component {
     } else if (activeStep === 1) {
       return (
         <div>
-          <Topbar title="Cadastro de culturas" classes={classes} />
+          <Topbar title="Cadastro de Culturas" classes={classes} {...this.props} />
           <div className={classes.form}>
             <TextField
               id="outlined-with-placeholder"
@@ -284,7 +289,7 @@ class Register extends React.Component {
     } else if (activeStep === 2) {
       return (
         <div>
-          <Topbar title="Informações da sua região" classes={classes} />
+          <Topbar title="Informações da sua região" classes={classes} {...this.props} />
           <img
             alt="map"
             src="https://i.imgur.com/zw9DOK2.jpg"
@@ -305,7 +310,32 @@ class Register extends React.Component {
     } else if (activeStep === 3) {
       return (
         <div>
-          <Topbar title="Agricultura sintrópica" classes={classes} />
+          <Topbar title="Sobre Você" classes={classes} {...this.props} />
+          <div className={classes.form}>
+            <TextField
+              label="Conte nos um pouco mais sobre você ;)"
+              className={classes.textField}
+              margin="normal"
+              multiline
+              rowsMax="4"
+              id="standard-multiline-static"
+            />
+            <div className={classes.after}>
+              <Typography
+                color="primary"
+                variant="body2"
+                onClick={this.handleNext}
+              >
+                Contar depois.
+              </Typography>
+            </div>
+          </div>
+        </div>
+      )
+    } else if (activeStep === 4) {
+      return (
+        <div>
+          <Topbar title="Agricultura Sintrópica" classes={classes} {...this.props} />
           <img
             alt="map"
             src="https://i.imgur.com/CdHtX7L.png"
@@ -319,14 +349,14 @@ class Register extends React.Component {
   render() {
     const { classes } = this.props;
     const { activeStep } = this.state;
-    const isFinalStep = activeStep === 3;
+    const isFinalStep = activeStep === 4;
 
     return (
       <div>
         {this.renderStep()}
         <MobileStepper
           variant="dots"
-          steps={4}
+          steps={5}
           position="static"
           activeStep={this.state.activeStep}
           className={classes.nav}
