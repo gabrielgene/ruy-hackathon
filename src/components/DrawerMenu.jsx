@@ -22,6 +22,9 @@ const styles = {
 };
 
 class DrawerMenu extends Component {
+  onExit = () => {
+    this.props.history.push('/');
+  }
   render() {
     const { classes } = this.props;
     return (
@@ -61,7 +64,7 @@ class DrawerMenu extends Component {
             </ListItemIcon>
             <ListItemText primary="Sobre" />
           </ListItem>
-          <ListItem button onClick={this.props.onExit}>
+          <ListItem button onClick={this.onExit}>
             <ListItemIcon>
               <ExitIcon />
             </ListItemIcon>
