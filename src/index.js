@@ -7,6 +7,7 @@ import { green, pink } from '@material-ui/core/colors';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Progress from './pages/Progress';
+import Store from './pages/Store';
 import Layout from './components/Layout';
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
@@ -30,6 +31,12 @@ const CultureViewPage = () => (
   </Layout>
 );
 
+const StorePage = () => (
+  <Layout title="Loja" menu>
+    <Store />
+  </Layout>
+);
+
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <Router>
@@ -38,7 +45,7 @@ const App = () => (
         <Route exact path="/cadastro" component={Register} />
         <Route exact path="/cultura" component={ProgressPage} />
         <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
-        <Route exact path="/agricultores" component={Register} />
+        <Route exact path="/loja" component={StorePage} />
       </Switch>
     </Router>
   </MuiThemeProvider>
