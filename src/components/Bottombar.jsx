@@ -2,7 +2,7 @@ import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import HomeIcon from '@material-ui/icons/HomeOutlined';
+import ShopIcon from '@material-ui/icons/ShoppingBasketOutlined';
 import FlowerIcon from '@material-ui/icons/LocalFloristOutlined';
 import { withRouter } from "react-router-dom";
 
@@ -48,8 +48,8 @@ class BottomBar extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Principal" icon={<HomeIcon />} />
         <BottomNavigationAction label="Cultura" icon={<FlowerIcon />} />
+        <BottomNavigationAction label="Loja" icon={<ShopIcon />} />
       </BottomNavigation>
     );
   }

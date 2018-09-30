@@ -37,6 +37,7 @@ const StorePage = () => (
   </Layout>
 );
 
+
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <Router>

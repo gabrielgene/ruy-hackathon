@@ -1,6 +1,109 @@
-body,html {
+body, html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
   max-width: 700px;
+}
+
+/* The animation code */
+@keyframes example {
+  0% {
+    bottom: 10px;
+  }
+
+  80% {
+    bottom: 80px;
+  }
+
+  100% {
+    bottom: 70px;
+  }
+}
+
+@keyframes banana {
+  0% {
+    width: 10px;
+  }
+
+  100% {
+    width: 100px;
+  }
+}
+
+@keyframes milho {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 36px;
+  }
+}
+
+@keyframes pimentao {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 25px;
+  }
+}
+
+@keyframes couve {
+  0% {
+    width: 0px;
+  }
+
+  100% {
+    width: 37px;
+  }
+}
+
+/* The element to apply the animation to */
+#btn {
+  animation-name: example;
+  animation-duration: 1s;
+}
+
+#linha {
+  width: 300px;
+  position: absolute;
+  bottom: 118px;
+  left: 39px;
+}
+
+#banana {
+  animation-name: banana;
+  max-width: 100px;
+  animation-duration: 2s;
+  position: absolute;
+  bottom: 118px;
+}
+
+#milho {
+  max-width: 36px;
+  animation-name: milho;
+  animation-duration: 2s;
+  position: absolute;
+  bottom: 118px;
+  left: 149px;
+}
+
+#pimentao {
+  max-width: 25px;
+  animation-name: pimentao;
+  animation-duration: 2s;
+  position: absolute;
+  bottom: 118px;
+  left: 241px;
+}
+
+#couve {
+  max-width: 37px;
+  animation-name: couve;
+  animation-duration: 2s;
+  position: absolute;
+  bottom: 118px;
+  right: 34px;
 }
