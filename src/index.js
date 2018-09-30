@@ -7,6 +7,7 @@ import { green, pink } from '@material-ui/core/colors';
 import Register from './pages/Register';
 import Login from './pages/Login';
 import Progress from './pages/Progress';
+import Video from './pages/Video';
 import Store from './pages/Store';
 import CultureView from './pages/CultureView';
 import MyStore from './pages/MyStore';
@@ -39,6 +40,12 @@ const MyStorePage = ({ history }) => (
   </Layout>
 );
 
+const KnowMorePage = ({ history }) => (
+  <Layout title="Agricultura sintrópica" back={() => history.goBack()}>
+    <Video />
+  </Layout>
+);
+
 const App = () => (
   <MuiThemeProvider theme={theme}>
     <Router>
@@ -49,6 +56,7 @@ const App = () => (
         <Route exact path="/cultura/:cultureName" component={CultureView} />
         <Route exact path="/loja" component={StorePage} />
         <Route exact path="/minha-loja" component={MyStorePage} />
+        <Route exact path="/saiba-mais" component={KnowMorePage} />
       </Switch>
     </Router>
   </MuiThemeProvider>

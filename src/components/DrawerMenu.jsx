@@ -25,6 +25,9 @@ class DrawerMenu extends Component {
   onExit = () => {
     this.props.history.push('/');
   }
+
+  onSaibaMais = () => this.props.history.push('/saiba-mais');
+
   render() {
     const { classes } = this.props;
     return (
@@ -49,7 +52,7 @@ class DrawerMenu extends Component {
             </ListItemIcon>
             <ListItemText primary="Adicionar Cultura" />
           </ListItem>
-          <ListItem button>
+          <ListItem button onClick={this.onSaibaMais}>
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
