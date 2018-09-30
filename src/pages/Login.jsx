@@ -26,6 +26,12 @@ const styles = theme => ({
     cursor: 'pointer',
     marginTop: theme.spacing.unit * 12,
   },
+  semear: {
+    maxWidth: '89%',
+    maxHeight: 84,
+    marginBottom: 69,
+    marginTop: 100,
+  }
 });
 
 class Login extends Component {
@@ -53,14 +59,7 @@ class Login extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography
-          color="primary"
-          className={classes.title}
-          variant="display3"
-        >
-          Semear
-        </Typography>
-        {/* <img style={{maxWidth: '100%', maxHeight: 100, marginBottom:88, marginTop: 80}} src="https://i.imgur.com/JXOvsZy.png" alt="logo" /> */}
+        <img className={classes.semear} src="https://i.imgur.com/ZXH9gQk.png" alt="logo" />
         <TextField
           id="user"
           label="Usuário"
