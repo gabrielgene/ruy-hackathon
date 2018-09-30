@@ -106,7 +106,7 @@ const Topbar = (props) => (
 
 class Register extends React.Component {
   state = {
-    activeStep: 2,
+    activeStep: 0,
     name: 'Gabriel Genê',
     cpf: '075.111.633.00',
     location: 'Rua número 0',
@@ -135,7 +135,7 @@ class Register extends React.Component {
   };
 
   onAdd = () => {
-    const { cultureList, culture, amount } = this.state;
+    const { cultureList, culture } = this.state;
     let cultureItem;
     if (culture === 'Banana') {
       cultureItem = hardCodedObj.banana;
@@ -285,13 +285,14 @@ class Register extends React.Component {
       return (
         <div>
           <Topbar title="Informações da sua região" classes={classes} />
-          <img src="https://i.imgur.com/zw9DOK2.jpg" style={{ width: '100%' }} />
+          <img alt="map" src="https://i.imgur.com/zw9DOK2.jpg" style={{ width: '100%' }} />
         </div>
       )
     } else if (activeStep === 3) {
       return (
         <div>
           <Topbar title="Agricultura sintropica" classes={classes} />
+          <img alt="map" src="https://i.imgur.com/CdHtX7L.png" style={{ width: '100%' }} />
         </div>
       )
     }
