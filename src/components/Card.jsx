@@ -16,6 +16,7 @@ const styles = {
     color: 'white',
     padding: 0,
     margin:0,
+    minHeight: 126,
   },
   progress:{
     background: 'red',
@@ -23,19 +24,32 @@ const styles = {
   },
 };
 
+// #goHorse
+const microHocWithLink = ({link, image, classes}) => (
+  <Link style={{ textDecoration: 'none' }} to={link}>
+    <CardActionArea>
+      <CardContent className={classes.card}>
+        <img style={{ width: '100%', marginBottom: -4, }} src={image} alt="product" />
+      </CardContent>
+    </CardActionArea>
+  </Link>
+);
+
 class CardFruit extends Component {
   render() {
     const { link, image, classes } = this.props;
     return (
       <div>
         <Card>
-          <Link style={{ textDecoration: 'none' }} to={link}>
+          {
+            link ? microHocWithLink(this.props) :
             <CardActionArea>
               <CardContent className={classes.card}>
                 <img style={{ width: '100%', marginBottom: -4, }} src={image} alt="product" />
               </CardContent>
             </CardActionArea>
-          </Link>
+          }
+
         </Card>
       </div>
     )

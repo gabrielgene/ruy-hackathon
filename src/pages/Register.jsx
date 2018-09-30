@@ -148,11 +148,11 @@ class Register extends React.Component {
   onAdd = () => {
     const { cultureList, culture } = this.state;
     let cultureItem;
-    if (culture === 'Banana') {
+    if (culture.match(/banana/g)) {
       cultureItem = hardCodedObj.banana;
-    } else if (culture === 'Cebola roxa') {
+    } else if (culture.match(/cebola/g)) {
       cultureItem = hardCodedObj.cebolaroxa;
-    } else if (culture === 'Cenoura') {
+    } else if (culture.match(/cenoura/g)) {
       cultureItem = hardCodedObj.cenoura;
     }
 
@@ -273,7 +273,6 @@ class Register extends React.Component {
               {cultureList.map(({ image }) => (
                 <ListItem key={image} button>
                   <CardFruit
-                    link={''}
                     image={image}
                   />
                 </ListItem>
@@ -289,7 +288,7 @@ class Register extends React.Component {
           <img
             alt="map"
             src="https://i.imgur.com/zw9DOK2.jpg"
-            style={{ width: '100%', marginTop: 56 }}
+            style={{ width: '100%', marginTop: 56, height: 175 }}
           />
           <List component="nav" style={{ marginBottom: 56 }}>
             {hardList.map(({ image }) => (
@@ -306,7 +305,7 @@ class Register extends React.Component {
     } else if (activeStep === 3) {
       return (
         <div>
-          <Topbar title="Agricultura sintropica" classes={classes} />
+          <Topbar title="Agricultura sintrópica" classes={classes} />
           <img
             alt="map"
             src="https://i.imgur.com/CdHtX7L.png"
