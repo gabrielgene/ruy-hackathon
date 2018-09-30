@@ -18,8 +18,8 @@ const theme = createMuiTheme({
   },
 });
 
-const ProgressPage = () => (
-  <Layout title="Minhas Culturas" bottomBar menu>
+const ProgressPage = (props) => (
+  <Layout title="Minhas Culturas" bottomBar menu {...props}>
     <Progress />
   </Layout>
 );
@@ -32,15 +32,15 @@ const CultureViewPage = () => (
 
 const App = () => (
   <MuiThemeProvider theme={theme}>
-  <Router>
-    <Switch>
-      <Route exact path="/" component={Login} />
-      <Route exact path="/cadastro" component={Register} />
-      <Route exact path="/cultura" component={ProgressPage} />
-      <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
-      <Route exact path="/agricultores" component={Register} />
-    </Switch>
-  </Router>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Login} />
+        <Route exact path="/cadastro" component={Register} />
+        <Route exact path="/cultura" component={ProgressPage} />
+        <Route exact path="/cultura/:cultureName" component={CultureViewPage} />
+        <Route exact path="/agricultores" component={Register} />
+      </Switch>
+    </Router>
   </MuiThemeProvider>
 );
 
