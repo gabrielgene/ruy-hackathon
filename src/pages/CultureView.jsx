@@ -7,6 +7,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import Checkbox from '@material-ui/core/Checkbox';
 import CultureViewComments from './CultureViewComments';
+import Animation from '../components/Anime';
 
 
 
@@ -87,37 +88,39 @@ class CultureView extends React.Component {
           <img src={fruitImage} alt="bli" style={{ width: '100%',minHeight: 150, }} />
           {value === "one" &&
             <List>
-            {[0, 1, 2, 3].map(value => (
-              <ListItem
-                key={value}
-                role={undefined}
-                dense
-                button
-                onClick={this.handleToggle(value)}
-                className={classes.listItem}
-              >
-                <Checkbox
-                  classes={{
-                    root: classes.checkbox,
-                    checked: classes.checked,
-                  }}
-                  checked={this.state.checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                />
-                <div className={classes.listItemDescription}>
-                  <h3 style={{ margin: '8px 0' }}> What is Lorem Ipsum? </h3>
-                  <span>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+              {[0, 1, 2, 3].map(value => (
+                <ListItem
+                  key={value}
+                  role={undefined}
+                  dense
+                  button
+                  onClick={this.handleToggle(value)}
+                  className={classes.listItem}
+                >
+                  <Checkbox
+                    classes={{
+                      root: classes.checkbox,
+                      checked: classes.checked,
+                    }}
+                    checked={this.state.checked.indexOf(value) !== -1}
+                    tabIndex={-1}
+                    disableRipple
+                  />
+                  <div className={classes.listItemDescription}>
+                    <h3 style={{ margin: '8px 0' }}> What is Lorem Ipsum? </h3>
+                    <span>
+                      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                   </span>
-                </div>
-                {/* <ListItemText primary={`Line item ${value + 1}`} /> */}
-              </ListItem>
-            ))}
-          </List>
+                  </div>
+                  {/* <ListItemText primary={`Line item ${value + 1}`} /> */}
+                </ListItem>
+              ))}
+            </List>
           }
           {value === "two" &&
-            <h1>Item Two</h1>
+            <div>
+              <Animation />
+            </div>
           }
           {value === "three" &&
             <CultureViewComments />
