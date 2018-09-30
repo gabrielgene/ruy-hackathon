@@ -250,15 +250,6 @@ class Register extends React.Component {
               margin="normal"
               value={culture}
             />
-            <TextField
-              id="outlined-with-placeholder"
-              label="Quantidade"
-              placeholder="Ex: 10 sacas ou 20 mudas"
-              className={classes.textField}
-              onChange={this.handleChange('amount')}
-              margin="normal"
-              value={amount}
-            />
             <Button
               variant="outlined"
               color="primary"
