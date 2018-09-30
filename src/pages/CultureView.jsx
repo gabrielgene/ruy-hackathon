@@ -38,11 +38,11 @@ const styles = theme => ({
 
 const matchFruit = fruit => {
   if (fruit.match(/cebola/g)) {
-    return 'https://i.imgur.com/JFPyLJM.png';
+    return 'https://i.imgur.com/WaiovWP.png';
   } else if (fruit === 'banana') {
     return 'https://i.imgur.com/Z7cn8Ew.png';
   } else if (fruit === 'cenoura') {
-    return 'https://i.imgur.com/TC62vyy.png';
+    return 'https://i.imgur.com/gM6puhi.png';
   }
 }
 
