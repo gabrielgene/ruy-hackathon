@@ -44,7 +44,7 @@ class CultureView extends React.Component {
       <div>
         <Card className={classes.card}>
           <CardActionArea>
-            <CardContent style={{ display: 'flex', paddingBottom: '0px' }}>
+            <CardContent style={{ display: 'flex', paddingBottom: 0, alignItems: 'center', }}>
               <Avatar
                 alt="Adelle Charles"
                 src="https://avatars3.githubusercontent.com/u/719755?s=400&v=4"
@@ -64,7 +64,7 @@ class CultureView extends React.Component {
         </Card>
         <Card className={classes.card}>
           <CardActionArea>
-            <CardContent style={{ display: 'flex', paddingBottom: '0px' }}>
+            <CardContent style={{ display: 'flex', paddingBottom: 0, alignItems: 'center', }}>
               <Avatar
                 alt="Adelle Charles"
                 src="https://avatars3.githubusercontent.com/u/1201847?s=460&v=4"
