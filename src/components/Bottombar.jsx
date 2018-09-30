@@ -18,24 +18,15 @@ const styles = {
 
 // #notProudAboutThat
 class BottomBar extends React.Component {
-  state = {
-    value: parseInt(localStorage.getItem('value'), 10),
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: props.location.pathname === '/loja' ? 1 : 0,
+    };
+  }
 
   handleChange = (event, value) => {
-    localStorage.setItem('value', value);
-    const gambiarra = localStorage.getItem('value');
-    switch (gambiarra) {
-      case '0':
-        this.props.history.push('/cultura');
-        break;
-      case '1':
-        this.props.history.push('/loja');
-        break;
-      default:
-        break;
-    }
-    return;
+    this.props.history.push(value === 1 ? '/loja' : '/cultura');
   };
 
   render() {
