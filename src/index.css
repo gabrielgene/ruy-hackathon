@@ -56,7 +56,7 @@ body, html {
   }
 
   100% {
-    width: 37px;
+    width: 40px;
   }
 }
 
@@ -69,7 +69,7 @@ body, html {
 #linha {
   width: 300px;
   position: absolute;
-  bottom: 118px;
+  top: 270px;
   left: 39px;
 }
 
@@ -78,7 +78,8 @@ body, html {
   max-width: 100px;
   animation-duration: 2s;
   position: absolute;
-  bottom: 118px;
+  bottom: 311px;
+  left: 30px;
 }
 
 #milho {
@@ -86,8 +87,8 @@ body, html {
   animation-name: milho;
   animation-duration: 2s;
   position: absolute;
-  bottom: 118px;
-  left: 149px;
+  bottom: 310px;
+  left: 163px;
 }
 
 #pimentao {
@@ -95,15 +96,15 @@ body, html {
   animation-name: pimentao;
   animation-duration: 2s;
   position: absolute;
-  bottom: 118px;
+  bottom: 310px;
   left: 241px;
 }
 
 #couve {
-  max-width: 37px;
+  max-width: 40px;
   animation-name: couve;
   animation-duration: 2s;
   position: absolute;
-  bottom: 118px;
-  right: 34px;
+  bottom: 310px;
+  left: 309px;
 }
