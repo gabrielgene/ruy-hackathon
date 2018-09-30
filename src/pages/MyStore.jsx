@@ -49,7 +49,6 @@ class MyStore extends Component {
   render() {
     const { loading } = this.state;
     const { classes } = this.props;
-    console.log(loading)
     if (loading) {
       return (
         <div>
