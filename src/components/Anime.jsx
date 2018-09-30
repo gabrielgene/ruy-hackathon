@@ -15,6 +15,7 @@ const AnimePage = () => (
     <img
       id="couve"
       src="https://i.imgur.com/I4VZlnh.png"
+      alt="couve"
     />
     <img
       id="milho"

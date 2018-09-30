@@ -28,20 +28,13 @@ const styles = theme => ({
   },
 });
 
-const PaperCard = ({ classes }) => (
-  <Paper className={classes.root} elevation={1}>
-    <h1>Aqui</h1>
-  </Paper>
-);
-
 const Store = ({ classes }) => (
   <div className={classes.store}>
-    <PaperCard classes={classes} />
-    <PaperCard classes={classes} />
-    <PaperCard classes={classes} />
-    <PaperCard classes={classes} />
-    <PaperCard classes={classes} />
-    <PaperCard classes={classes} />
+    <img style={{
+      width: 375,
+      height: 885,
+      marginTop: -102,
+    }} src="https://i.imgur.com/bevUErs.jpg" alt="list" />
     <Button
       id="btn"
       variant="extendedFab"
@@ -52,7 +45,7 @@ const Store = ({ classes }) => (
     >
       <StoreIcon className={classes.extendedIcon} />
       Criar minha loja
-      </Button>
+    </Button>
   </div>
 );
 
