@@ -51,7 +51,7 @@ const matchFruit = fruit => {
 class CultureView extends React.Component {
   state = {
     value: "one",
-    checked: [0],
+    checked: [1],
     playStatus: Sound.status.STOPPED,
     playing: false,
   };
@@ -92,11 +92,10 @@ class CultureView extends React.Component {
     return (
       <List>
         <Sound
-          url="https://s0.vocaroo.com/media/download_temp/Vocaroo_s0ZOCZP5SwCf.mp3"
+          url="https://s0.vocaroo.com/media/download_temp/Vocaroo_s05FlZ6uhytr.mp3"
           playStatus={playStatus}
           playFromPosition={300 /* in milliseconds */}
           onLoading={() => console.log('onloading')}
-          // onPlaying={() => setPlaying(true)}
           onFinishedPlaying={this.stopPlaying}
         />
         <ListItem
@@ -125,10 +124,12 @@ class CultureView extends React.Component {
               <Icon
                 style={this.state.playStatus === Sound.status.PLAYING ? {color: 'blue'} : null}
                 onClick={this.playSound}
-              > speaker_phone </Icon>
+              >
+                {this.state.playStatus === Sound.status.PLAYING ? 'volume_up' : 'volume_down'}
+              </Icon>
             </div>
             <span>
-            Em primeiro lugar, para ter uma bananeira saudável, é preciso que você escolha um local com temperatura e umidade adequadas. Como você já leu no decorrer desse artigo, as bananas precisam de clima quente para se desenvolverem. Neste caso, o ideal seria entre 26 °C e 30 °C durante o dia e pelo menos 20 °C à noite.
+            Para ter uma bananeira saudável, é preciso um local com temperatura e umidade adequadas.
           </span>
           </div>
         </ListItem>
@@ -157,13 +158,46 @@ class CultureView extends React.Component {
               </h3>
               <Icon
                 onClick={this.playSound}
-                // style={this.state.playStatus === Sound.status.PLAYING ? {color: 'blue'} : null}
               >
-                speaker_phone
+                volume_down
               </Icon>
             </div>
             <span>
               O local para plantar bananas também precisa ser bem ensolarado, já que a bananeira precisa de pelo menos 12 horas de sol intenso todos os dias para crescer bem.
+            </span>
+          </div>
+        </ListItem>
+        <ListItem
+          value={2}
+          role={undefined}
+          dense
+          button
+          className={classes.listItem}
+          disableRipple
+        >
+          <Checkbox
+            classes={{
+              root: classes.checkbox,
+              checked: classes.checked,
+            }}
+            checked={this.state.checked.indexOf(2) !== -1}
+            onClick={this.handleToggle(2)}
+            tabIndex={-1}
+            disableRipple
+          />
+          <div className={classes.listItemDescription}>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
+              <h3 style={{ margin: '8px 0' }}>
+                Preparo do solo
+              </h3>
+              <Icon
+                onClick={this.playSound}
+              >
+                volume_down
+              </Icon>
+            </div>
+            <span>
+              Aplicar pesticidas no solo, isso com pelo menos um mês de antecedência ao plantio.
             </span>
           </div>
         </ListItem>
